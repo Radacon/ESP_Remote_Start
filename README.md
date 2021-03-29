@@ -8,7 +8,7 @@
 
 <h2>Warnings</h2>
 
-<p> First thing's first: Please don't even consider building one of these if you park your cars in a garage. A single error in the code could kill you and the code is not without it's flaws! Second, I implement OTA updating, this is in no way locked down to prevent some rando with a laptop in your neighborhood from pushing nefarious code onto the device.</p> 
+<p> First thing's first: Please don't even consider building one of these if you park your cars in a garage. A single error in the code can kill, and the code is not without it's flaws! Second, I implement OTA updating, this is in no way locked down to prevent some rando with a laptop in your neighborhood from pushing nefarious code onto the device, unlocking your car, and stealing all of your stuff, all without walking into your house for the keys.</p> 
 <p> With that said, if you park your vehicles outside, and are willing to accept the risk of someone remote starting it/unlocking it to steal your stuff then by all means continue on. </p>
 
 <h2>Limitations</h2>
@@ -34,4 +34,4 @@
 <p>This is pretty easy, 3.3V (from your ESP) connects to + on the fob and Gnd connects to -. Okay now what about the buttons? With my sample size of two, the microcontroller embedded in the key fobs uses a pull-up topology. Follow the traces on the fob to determine which ones are connected to the microcontroller and which ones are ground connections. From here, you can solder wires from the ESP GPIO pins to the pads feeding into the microcontroller.</p>
 
 <h3>Disclaimer</h3>
-<p> This project is a proof of concept. It is by no means a finished product and should not be treated as such. This is here to help you help me get my foot in the door with HTML/CSS/AJAX and interfacing an ESP8266 with a real-world device. Please use common sense </p> 
+<p> This project is a proof of concept. It is by no means a finished product and should not be treated as such. This is here to help you help me get my foot in the door with HTML/CSS/AJAX and interfacing an ESP8266 with a real-world device. Please use common sense. This is not code that you should trust for your safety.</p> 
