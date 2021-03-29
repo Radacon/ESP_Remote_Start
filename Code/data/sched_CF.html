@@ -1,0 +1,42 @@
+<HTML>
+    <head>
+    <link rel="stylesheet" href="mystyle.css">
+    </head>
+
+    <div class=div-full-page>
+            <center><H2>Conrad's Scheduler</H2></center>
+            <center><b><p>Schedule a date and time to autostart your truck.</p></b></center>
+            <form method="post" action="/sched_Submit.html">
+                <center><input type="date" id="ConradDateStart" name="ConradDateStart"></center>
+                <br>
+                <center><input type="time" id="ConradTimeStart" name="ConradTimeStart"></center>
+                <br>
+                <center><input type="submit"></center>
+
+
+              
+            </form>
+
+            <form method="get" action="/clear_Conrad">
+                <center><button class=button-rect type="submit"><p><b>Clear Scheduled Autostart</b></p><p>Next autostart is scheduled for: <span id="ConradStartTime">None Scheduled!</span></p></button></center>
+            </form>
+    </div>
+
+
+<script>
+getConradStart();
+    
+function getConradStart() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("ConradStartTime").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "/get_CF_start_time", true);
+  xhttp.send();
+}
+</script>
+
+</HTML>

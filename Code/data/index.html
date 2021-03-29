@@ -1,0 +1,292 @@
+<HTML>
+    <head>
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel='icon' href='favicon.ico' type='image/x-icon'/ >    
+    </head>
+    
+    <div>
+        <center><H2>Amanda's Car</H2></center>
+        <center>
+            <table>
+                <th class=th-but><button class=button-round onclick="actionAmanda('/startAmanda');"><img src="start.svg" height=75% width=75%></button></th>
+                <th class=th-but><button class=button-round onclick="actionAmanda('/stopAmanda');"><img src="stop.svg" height=75% width=75%></button></th>
+            </table>
+        </center>
+        <br>
+        <center>
+            <table>
+                <th class=th-but><button class=button-round onclick="actionAmanda('/lockAmanda');"><img src="lock.svg" height=75% width=75%></button></th>
+                <th class=th-but><button class=button-round onclick="actionAmanda('/unlockAmanda');"><img src="unlock.svg" height=75% width=75%></button></th>
+            </table>
+        </center>
+        <center>
+        <br>    
+            <form method="get" action="sched_AF.html">
+                <button class=button-rect type="submit">
+                    <img src="schedule.svg" height=75% width=75%>
+                        <p>Next Scheduled Start Time: 
+                            <span id="AmandaStartTime">None Scheduled!</span></p>
+                </button>
+            </form>
+        </center>      
+    </div>
+    
+    <br>
+    
+    <div>
+        <center><H2>Conrad's Truck</H2></center>
+        <center>
+            <table>
+                <th class=th-but><button class=button-round onclick="actionConrad('/startConrad');"><img src="start.svg" height=75% width=75%></button></th>
+                <th class=th-but><button class=button-round onclick="actionConrad('/stopConrad');"><img src="stop.svg" height=75% width=75%></button></th>
+            </table>
+        </center>
+        <br>
+        <center>
+            <table>
+                <th class=th-but><button class=button-round onclick="actionConrad('/lockConrad');"><img src="lock.svg" height=75% width=75%></button></th>
+                <th class=th-but><button class=button-round onclick="actionConrad('/unlockConrad');"><img src="unlock.svg" height=75% width=75%></button></th>
+            </table>
+        </center>
+        <center>
+        <br>    
+            <form method="get" action="sched_CF.html">
+                <button class=button-rect type="submit">
+                    <img src="schedule.svg" height=75% width=75%>
+                        <p>Next Scheduled Start Time: 
+                            <span id="ConradStartTime">None Scheduled!</span></p> 
+                </button>
+            </form>
+        </center>
+    </div>
+    
+    <br>
+    
+    <div class=div-utilities>
+        <center><H2>Utilities</H2></center>
+        <center>
+            <form method="post" action="/reboot.html">
+            <button class=button-rect type="submit"><b><p>Restart ESP Device</p></b></button>
+            </form>
+        </center>
+    
+        <center>
+            <form method="post" action="/update_time">
+                <button class=button-rect type="submit"><b><p>ReSync Time</p></b><p> Current Device Time: <span id="CurrTimeandDate">0</span></p></button>
+            </form>
+        </center>
+        <center>
+            <form method="post" action="/clear_all_sched">
+            <button class=button-rect type="submit"><b><p>Clear All Scheduled Alarms</p></b></button>
+            </form>
+        </center>
+        <center>
+            <h2>Variables</h2>
+            <table class="alt">
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class=td-center>Conrad's Next Start (Time Left)</td>
+                        <td><span id="ConradTimeRemain">N/A</span></td>
+                    </tr>
+                    <tr>
+                        <td class=td-center>Amanda's Next Start (Time Left)</td>
+                        <td><span id="AmandaTimeRemain">N/A</span></td>
+                    </tr>
+                    <tr>
+                        <td class=td-center>RSSI</td>
+                        <td><span id="rssi">0</span> dB</td>
+                    </tr>
+                    <tr>
+                        <td class=td-center>Heap</td>
+                        <td><span id="heap">0</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!---
+            <h2>Statistics</h2>
+            <table class="alt">
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Total Executed</th>
+                        <th>Last Executed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class=td-left>Amanda Locks</td>
+                        <td>TODO</td>
+                        <td>18:07:00 on 02-03-2021</td>
+                    </tr>
+                    <tr>
+                        <td class=td-left>Amanda Unlocks</td>
+                        <td>TODO</td>
+                        <td>18:07:00 on 02-03-2021</td>
+                    </tr>
+                    <tr>
+                        <td class=td-left>Amanda Starts</td>
+                        <td>TODO</td>
+                        <td>18:07:00 on 02-03-2021</td>
+                    </tr>
+                    <tr>
+                        <td class=td-left>Amanda Stops</td>
+                        <td>TODO</td>
+                        <td>18:07:00 on 02-03-2021</td>
+                    </tr>
+                    <tr>
+                        <td class=td-left>Conrad Locks</td>
+                        <td>TODO</td>
+                        <td>18:07:00 on 02-03-2021</td>
+                    </tr>
+                    <tr>
+                        <td class=td-left>Conrad Unlocks</td>
+                        <td>TODO</td>
+                        <td>18:07:00 on 02-03-2021</td>
+                    </tr>
+                    <tr>
+                        <td class=td-left>Conrad Starts</td>
+                        <td>TODO</td>
+                        <td>18:07:00 on 02-03-2021</td>
+                    </tr>
+                    <tr>
+                        <td class=td-left>Conrad Stops</td>
+                        <td>TODO</td>
+                        <td>18:07:00 on 02-03-2021</td>
+                    </tr>
+                    <tr>
+                        <td class=td-left>Conrad Next Start</td>
+                        <td>TODO</td>
+                        <td>18:07:00 on 02-03-2021</td>
+                    </tr>
+                    <tr>
+                        <td class=td-left>Conrad Stops</td>
+                        <td>TODO</td>
+                        <td>18:07:00 on 02-03-2021</td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        -->
+    </div>
+        
+    
+<script>
+setInterval(function() {
+    // Call a function repetatively with 1 second interval
+    getDevTime();
+    getrssi();
+    getAmandaStart();
+    getConradStart();
+    getConradRemainingTime();
+    getAmandaRemainingTime();
+    getRamUsage();
+}, 1000); //1000mSeconds update rate
+ 
+
+function getDevTime() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("CurrTimeandDate").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "/get_curr_time", true);
+  xhttp.send();
+}
+    
+function getrssi() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("rssi").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "/get_rssi", true);
+  xhttp.send();
+}
+    
+function getAmandaStart() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("AmandaStartTime").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "/get_AF_start_time", true);
+  xhttp.send();
+}
+    
+function getConradStart() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("ConradStartTime").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "/get_CF_start_time", true);
+  xhttp.send();
+}
+    
+function getConradRemainingTime() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("ConradTimeRemain").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "/get_CF_rem_time", true);
+  xhttp.send();
+}
+    
+function getAmandaRemainingTime() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("AmandaTimeRemain").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "/get_AF_rem_time", true);
+  xhttp.send();
+}
+    
+function getRamUsage() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("heap").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "/get_ram_usage", true);
+  xhttp.send();
+}
+    
+function actionAmanda(action){
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", action, true);
+    xhr.send();
+}
+    
+
+function actionConrad(action){
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", action, true);
+    xhr.send();
+}
+    
+</script>
+        
+</HTML>

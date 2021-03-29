@@ -1,0 +1,197 @@
+body {
+  background-color: #DFE0E0;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+
+.button-round {
+    height: 200px;
+    width: 200px;
+    background-color: white; /* Green */
+    border: 5px solid;
+    border-color: #ABABAB; 
+    border-radius: 50%;
+    color: black;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-rect {
+    height: 300px;
+    width: 700px;
+    background-color: white; /* Green */
+    border: 5px solid;
+    border-color: #ABABAB; 
+    border-radius: 10px;
+    color: black;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+.button-square{
+    height: 30%;
+    width: 30%;
+    background-color: white; /* Green */
+    border: 5px solid;
+    border-color: #ABABAB; 
+    border-radius: 10px;
+    color: black;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;  
+}
+
+div {
+    color: black;
+    display: block;
+    width: 90%;
+    height: 900px;
+    border: 2px solid;
+    border-color: #ABABAB;
+    background: white; 
+    padding: 20px;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+.div-full-page
+{
+    color: black;
+    display: block;
+    width: 90%;
+    height: 1400px;
+    border: 2px solid;
+    border-color: #ABABAB;
+    background: white; 
+    padding: 20px;
+    border-radius: 20px;
+    margin-left: 20px;    
+}
+.div-utilities{
+    color: black;
+    display: block;
+    width: 90%;
+    height: auto;
+    border: 2px solid;
+    border-color: #ABABAB;
+    background: white; 
+    padding: 20px;
+    border-radius: 20px;
+    margin-left: 20px; 
+}
+
+icon{
+    position:absolute;
+    left:18px;
+    top:9px;
+    font-size:30px;
+}
+
+p{
+    font-size: 150%
+}
+
+H2{
+    font-family: verdana;
+}
+
+H1{
+    font-family: veranda;
+    color: black;
+}
+
+input[type=submit]{
+    height: 300px;
+    width: 700px;
+    background-color: white; /* Green */
+    border: 5px solid;
+    border-color: #ABABAB; 
+    border-radius: 10px;
+    color: black;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    font-size: 400%;
+}
+
+input{
+    font-size: 400%;
+}
+
+input[type=time]{
+    height: 300px;
+    width: 700px;
+    border: 5px solid;
+    border-color: #ABABAB; 
+    border-radius: 10px;
+}
+
+input[type=date]{
+    height: 300px;
+    width: 700px;
+    border: 5px solid;
+    border-color: #ABABAB; 
+    border-radius: 10px;
+}
+
+table{
+    border-color: #ABABAB;
+    width: 700px;
+    border-collapse: collapse;
+}
+.table-buttons{
+    width: 30%;
+    border: none;
+}
+.th-but{
+    text-align: center;
+    border: none;
+    width: 30%;
+}
+
+
+th, td{
+    border: 3px solid;
+    border-color: #ABABAB;
+    width: 30%;
+    text-align: center;
+}
+.td-left{
+    border: 3px solid;
+    border-color: #ABABAB;
+    width: 30%;
+    text-align: left;
+}
+.td-right{
+    border: 3px solid;
+    border-color: #ABABAB;
+    width: 30%;
+    text-align: right;
+}
+.td-center{
+    border: 3px solid;
+    border-color: #ABABAB;
+    width: 30%;
+    text-align: center;
+}

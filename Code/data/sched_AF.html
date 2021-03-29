@@ -1,0 +1,42 @@
+<HTML>
+    <head>
+    <link rel="stylesheet" href="mystyle.css">
+    </head>
+
+    <div class=div-full-page>
+            <center><H2>Amanda's Scheduler</H2></center>
+            <center><b><p>Schedule a date and time to autostart your car.</p></b></center>
+            <form method="post" action="/sched_Submit.html">
+                <center><input type="date" id="AmandaDateStart" name="AmandaDateStart"></center>
+                <br>
+                <center><input type="time" id="AmandaTimeStart" name="AmandaTimeStart"></center>
+                <br>
+                <center><input type="submit"></center>
+
+
+              
+            </form>
+
+            <form method="get" action="/clear_Amanda">
+                <center><button class=button-rect type="submit"><p><b>Clear Scheduled Autostart</b></p><p>Next autostart is scheduled for: <span id="AmandaStartTime">None Scheduled!</span></p></button></center>
+            </form>
+    </div>
+
+
+<script>
+getAmandaStart();
+    
+function getAmandaStart() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("AmandaStartTime").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "/get_AF_start_time", true);
+  xhttp.send();
+}
+</script>
+
+</HTML>
